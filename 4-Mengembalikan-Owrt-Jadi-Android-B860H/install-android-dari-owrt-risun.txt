@@ -1,0 +1,28 @@
+386156
+
+# Cara mengembalikan Android dari OpenWRT
+> Device B860H V1/V2
+
+1. Boot ke openwrt
+2. upload file uboot.bin dan bootloader.img 
+3. upload ke folder: root
+4. Lalu ke terminal owrt
+ketik: cd
+lalu paste: dd if=uboot.bin of=/dev/bootloader
+->kalau error no space blablabla
+
+->pakai method kedua ini
+dd if=bootloader.img | pv | dd of=/dev/mmcblk2
+
+
+## Langkah kedua
+> wajib sudah install driver ya.
+1. Flash android pakai male to male (colok ke usb2)
+2. Tunggu flashing selesai sampai reboot otomatis.
+3. kalo udah selesai, cabut male2male dan colok adaptor stb
+
+### Tahap finishing
+4. tunggu android sampai booting.
+5. Kalo terlalu lama, cabut adaptor (tunggu 5 detik)lalu colok lagi
+6. Tunggu aja sampai selesai (first boot emang lama)
+7. done
