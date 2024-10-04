@@ -2,6 +2,10 @@
 > [!IMPORTANT]
 > Credit to : t.me/risunTuru (me)
 
+# Screenshoots
+![photo_2024-10-04_01-43-09](https://github.com/user-attachments/assets/2842b4cb-2be8-43d9-9438-03714e1ac313)
+![photo_2024-10-04_01-43-09 (2)](https://github.com/user-attachments/assets/5fe35197-40f0-4ab4-b458-e9a883f66fb3)
+
 # BAHAN
 > [!NOTE]
 > APP INI SUDAH MOD PRO
@@ -10,6 +14,10 @@
 - MT Manager
 - [MACRODROID 32BIT 5.47.13](https://github.com/risunCode/Risun-OWRT-Archive/raw/refs/heads/main/2-Script%20Modem%20HP/MacroDroid-Pro-v5.47.13_Arm32bit.apk)
 - [MACRODROID 64BIT 5.47.13](https://github.com/risunCode/Risun-OWRT-Archive/raw/refs/heads/main/2-Script%20Modem%20HP/MacroDroid-Pro-v5.47.13_Arm64bit.apk)
+
+## Download Script
+- Modpes_+_✅Hotspot📶_by_Risun_[Final]
+- Modpes_⛔No_Hotspot⛔_by_Risun_[Final]
 
 
 ## End of this blog.
