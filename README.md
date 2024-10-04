@@ -2,7 +2,8 @@
 > [!IMPORTANT]
 > Brought to you by: RisunTuru
 > - https://t.me/hiddentokio
-> - Terakhir diedit pada 2 October 2024
+> - https://t.me/risuntrash
+> - Terakhir diedit pada 4 October 2024
 
 **Summary**
 ## Klik pada folder di repositori ini
