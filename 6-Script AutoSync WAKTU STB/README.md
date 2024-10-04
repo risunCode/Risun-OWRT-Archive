@@ -14,8 +14,7 @@ wget --no-check-certificate "https://raw.githubusercontent.com/kulo-sinten/jam-h
 > gunakan sleep 3 sampai 5 detik
 > ![image](https://github.com/user-attachments/assets/a1fa7bb3-269b-4b68-81f7-ac756c5a9783)
 ```javascript
-- System - Startup
-- /usr/bin/jam.sh bug.com:port
+/usr/bin/jam.sh bug.com:port
 sleep 5
 ```
 ### Bug operator untuk otomatis sinkron jam
