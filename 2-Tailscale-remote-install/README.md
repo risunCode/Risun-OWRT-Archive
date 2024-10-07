@@ -8,16 +8,13 @@
 > 1. dowmload ipk disini https://github.com/asvow/luci-app-tailscale
 > 2. Taruh/upload file .ipk di etc/root
 
-## Langkah Kedua
+## Langkah Kedua Lanjutkan dengan menginstal file .ipk
 ![image](https://github.com/user-attachments/assets/c782c8c1-82cc-459b-9dc9-5e7f080ac479)
 > [!WARNING]
-> 1. Buka terminal dan ketik: opkg update
-> 2. Kalau sudah selesai update
-> 3. Selanjutnya ketik: cd
-
-### Lanjutkan dengan menginstal file .ipk
-- lalu Install sesuai dgn nama packagenya
-- ketik: opkg install luci-app-tailscale_.ipk (sesuaikan)
+> 1. Buka terminal dan ketik:
+```bash
+opkg update && cd && opkg install *.ipk
+```
 - Tunggu hingga proses instalasi selesai.
 
 ## Langkah Terakhir (Update Tailscale)
