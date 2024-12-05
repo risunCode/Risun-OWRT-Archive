@@ -1,6 +1,8 @@
 # Cara mengembalikan Android dari OpenWRT
 > Device B860H V1/V2
 
+# Bahan untuk b860h
+
 ## Langkah utama
 ![driver-aml](https://github.com/user-attachments/assets/8be07f81-fbcd-4577-bd67-19c509c7ff15)
 > [!NOTE]
