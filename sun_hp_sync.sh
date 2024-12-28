@@ -1,8 +1,9 @@
 #!/bin/bash
-timeout=5
-while true; do
+
+timeout=5 
+while true; do 
     adb devices | grep -w "device" > /dev/null
-    if [ $? -eq 0 ]; then
+    if [ $? -eq 0 ]; then 
         adb shell date > /root/datemate
         hari=$(cat /root/datemate | cut -b 9-10)
         bulan=$(cat /root/datemate | cut -b 5-7)
@@ -40,9 +41,9 @@ while true; do
         
         date -s "$tahun.$bulan.$hari-$waktu"
         echo "Waktu berhasil disinkronkan."
-        echo "by risunCode."
-        exit 3
-    else
+        echo "script by risunCode."
+        exit 0  
+    else 
         echo "Perangkat ADB tidak terdeteksi. Menunggu $timeout detik untuk mencoba lagi..."
         sleep $timeout
     fi
