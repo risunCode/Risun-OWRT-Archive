@@ -14,7 +14,7 @@ function stop_tunnel() {
         fi
     done
 }
-function sandal() {
+update_waktu() {
     hari=$(cat "$dtdir" | cut -b 12-13)
     bulan=$(cat "$dtdir" | cut -b 15-17)
     tahun=$(cat "$dtdir" | cut -b 19-22)
@@ -68,7 +68,7 @@ function sandal() {
 	logger "${nmfl}: Set time to [ $(date) ]"
 }
 
-ngecurl() {
+ngambil_waktu_pake_curl() {
     local attempt=1
     local max_attempts=10
 
@@ -78,8 +78,8 @@ ngecurl() {
             logger "${nmfl}: Konek ${cv_type} tersedia, melanjutkan tugas"
             return 0
         else
-            echo -e "${nmfl}: Gagal mengekstrak waktu, percobaan ke-$attempt"
-            logger "${nmfl}: Gagal mengekstrak waktu, percobaan ke-$attempt"
+            echo -e "${nmfl}: Gagal mengekstrak waktu -cek bug atau typo pada penulisan anda!-cek bug atau typo pada penulisan anda!, percobaan ke-$attempt"
+            logger "${nmfl}: Gagal mengekstrak waktu -cek bug atau typo pada penulisan anda!, percobaan ke-$attempt"
             attempt=$((attempt + 1))
             sleep 3
         fi
@@ -100,15 +100,17 @@ ngecurl() {
 
 
 tun_start() {
-    echo -e "${nmfl}: Restarting VPN tunnels jika tersedia."
+    echo -e "${nmfl}: Me-restart tunnnel jika sebelumnya aktif"
     zerotier_running=false
     pgrep -x "zerotier" > /dev/null && zerotier_running=true
+    "$initd/ttyd" restart
 
     for service in openclash mihomo zerotier; do
         if [[ -f "$initd/$service" && $(uci -q get ${service}.config.enable) == "1" ]]; then
             [[ "$service" == "zerotier" && "$zerotier_running" == true ]] && sleep 5
             "$initd/$service" restart && echo -e "${nmfl}: Restarting $service"
         fi
+        echo -e "${nmfl}: Script by kulosinten, modified by risunCode"
     done
 }
 
@@ -124,4 +126,4 @@ fi
 echo -e "${nmfl}: Script v${scver}"
 logger "${nmfl}: Script v${scver}"
 
-[[ "$2" == "cron" ]] && stop_tunnel || { ngecurl; sandal; tun_start; }
+[[ "$2" == "cron" ]] && stop_tunnel || { ngambil_waktu_pake_curl; update_waktu; tun_start; }
