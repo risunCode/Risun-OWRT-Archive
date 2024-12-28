@@ -103,15 +103,18 @@ tun_start() {
     echo -e "${nmfl}: Me-restart tunnnel jika sebelumnya aktif"
     zerotier_running=false
     pgrep -x "zerotier" > /dev/null && zerotier_running=true
-    "$initd/ttyd" restart
 
     for service in openclash mihomo zerotier; do
         if [[ -f "$initd/$service" && $(uci -q get ${service}.config.enable) == "1" ]]; then
             [[ "$service" == "zerotier" && "$zerotier_running" == true ]] && sleep 5
             "$initd/$service" restart && echo -e "${nmfl}: Restarting $service"
         fi
-        echo -e "${nmfl}: Script by kulosinten, modified by risunCode"
     done
+    echo -e "${nmfl}: Script by kulosinten, modified by risunCode"
+    if [[ "$ttyd_restarted" != "true" ]]; then
+        "$initd/ttyd" restart
+        ttyd_restarted="true"
+    fi
 }
 
 if [[ "$1" =~ ^https?:// ]]; then
