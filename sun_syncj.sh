@@ -15,11 +15,11 @@ function stop_tunnel() {
     done
 }
 update_waktu() {
-    hari=$(cat "$dtdir" | cut -b 12-13)
-    bulan=$(cat "$dtdir" | cut -b 15-17)
-    tahun=$(cat "$dtdir" | cut -b 19-22)
-    jam=$(cat "$dtdir" | cut -b 24-25)
-    menit=$(cat "$dtdir" | cut -b 26-31)
+    hari=$(cat "$dtdir" | cut -b 9-10)
+    bulan=$(cat "$dtdir" | cut -b 5-7)
+    tahun=$(cat "$dtdir" | cut -b 21-24)
+    jam=$(cat "$dtdir" | cut -b 12-13)
+    menit=$(cat "$dtdir" | cut -b 15-16)
 
     case $bulan in
         "Jan")
