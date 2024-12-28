@@ -125,4 +125,4 @@ fi
 echo -e "${nmfl}: Script v${scver}"
 logger "${nmfl}: Script v${scver}"
 
-[[ "$2" == "cron" ]] && stop_tunnel || { ngambil_waktu_pake_curl; update_waktu; tun_start; }
+[[ "$2" == "cron" ]] && stop_tunnel || { stop_tunnel; ngambil_waktu_pake_curl; update_waktu; tun_start; }
