@@ -56,23 +56,24 @@ ngecurl() {
     fi
 }
 
-ngepink() {
-    max_retry=5
-    attempt=1
-    while [[ $attempt -le $max_retry ]]; do
-        if curl -si "$cv_type" | grep -q 'Date:'; then
-            echo -e "${nmfl}: Konek ${cv_type} tersedia, melanjutkan tugas"
-            logger "${nmfl}: Konek ${cv_type} tersedia, melanjutkan tugas"
-            break
+function ngecurl() {
+    [[ -z "$cv_type" ]] && { echo -e "${nmfl}: Error: cv_type is not set."; exit 1; }
+    curl -si "$cv_type" | grep Date > "$dtdir"
+    echo -e "${nmfl}: Gas $cv_type sebagai server waktu."
+    logger "${nmfl}: Gas $cv_type sebagai server waktu."
+
+    if read hari bulan tahun jam menit < <(awk '{print $3, $2, $6, $4}' "$dtdir"); then
+        declare -A bulan_map=( ["Jan"]="01" ["Feb"]="02" ["Mar"]="03" ["Apr"]="04" ["May"]="05" ["Jun"]="06" ["Jul"]="07" ["Aug"]="08" ["Sep"]="09" ["Oct"]="10" ["Nov"]="11" ["Dec"]="12" )
+        bulan=${bulan_map[$bulan]}
+        if date -u -s "$tahun-$bulan-$hari $jam:$menit" > /dev/null 2>&1; then
+            echo -e "${nmfl}: Set time to [ $(date) ]"
+            logger "${nmfl}: Set time to [ $(date) ]"
         else
-            echo -e "${nmfl}: Koneksi gagal, mencoba lagi..."
-            ((attempt++))
-            sleep 3
+            echo -e "${nmfl}: Error setting date and time."
+            logger "${nmfl}: Error setting date and time."
         fi
-    done
-    if [[ $attempt -gt $max_retry ]]; then
-        echo -e "${nmfl}: Gagal terhubung ke $cv_type setelah $max_retry percobaan."
-        exit 1
+    else
+        echo -e "${nmfl}: Error reading date from file."
     fi
 }
 
