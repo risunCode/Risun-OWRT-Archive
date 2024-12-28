@@ -61,4 +61,4 @@ fi
 echo -e "${nmfl}: Script v${scver}"
 logger "${nmfl}: Script v${scver}"
 
-[[ "$2" == "cron" ]] && ngepink || { stop_tunnel; ngecurl; tun_start; }
+[[ "$2" == "cron" ]] && stop_tunnel || { ngecurl; tun_start; }
