@@ -111,10 +111,6 @@ tun_start() {
         fi
     done
     echo -e "${nmfl}: Script by kulosinten, modified by risunCode"
-    if [[ "$ttyd_restarted" != "true" ]]; then
-        "$initd/ttyd" restart
-        ttyd_restarted="true"
-    fi
 }
 
 if [[ "$1" =~ ^https?:// ]]; then
