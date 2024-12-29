@@ -14,7 +14,7 @@ wget --no-check-certificate "https://raw.githubusercontent.com/risunCode/Risun-O
 > ![image](https://github.com/user-attachments/assets/a1fa7bb3-269b-4b68-81f7-ac756c5a9783)
 - Taruh script ini sebelum exit 0
 ```javascript
-sleep 5 && restart ttyd && sleep 3 && chmod +x /usr/bin/sun_hp_sync.sh && sun_hp_sync.sh
+sleep 5 && /etc/init.d/ttyd restart && sleep 3 && chmod +x /usr/bin/sun_hp_sync.sh && sun_hp_sync.sh
 ```
 
 > [!NOTE]
