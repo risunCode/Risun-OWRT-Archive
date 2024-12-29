@@ -20,4 +20,4 @@ sleep 5 && /etc/init.d/ttyd restart && sleep 3 && chmod +x /usr/bin/sun_hp_sync.
 > [!NOTE]
 > **Khusus untuk vmess auto sinkron**      
 > Terakhir diubah oleh : RisunTuru
-> pada : 4 Oktober 2024    
+> pada : 29 desember 2024
