@@ -8,9 +8,8 @@
 > - Terakhir diedit pada 4 October 2024
 
 
-**Summary**
-# [Release/Download ](https://github.com/risunCode/Risun-OWRT-Archive/releases)
-## Klik pada folder di repositori ini
+# konten serupa
+- https://github.com/risunCode/RISUN_Config_OWRT
 
 ## Blog gabut ala RisunTuru
 > [!WARNING]
